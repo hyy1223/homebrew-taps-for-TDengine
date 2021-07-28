@@ -9,12 +9,14 @@ class Tdengine < Formula
   license "AGPL-3.0"
 
   depends_on "cmake" => :build
+  depends_on "make"
 
   def install
-  system "cmake"
-  system "make"
-  bin.install "bin/taos"
-  bin.install "bin/taosd"
+  Dir::mkdir(debug)
+  Dir::chdir(debug)
+  system "cmake",".."
+  system "cmake","--built"
+  system "make","install"
   end
 
   test do
