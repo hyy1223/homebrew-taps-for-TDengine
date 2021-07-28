@@ -8,14 +8,14 @@ class Tdengine < Formula
   sha256 "b5688928cde89c2a8bf315d11e1368843ea7d7d69c91ba1c95a5760e7b8bfb1d"
   license "AGPL-3.0"
 
-  # depends_on "cmake" => :build
+  depends_on "cmake" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+  system "make"
+  bin.install "bin/taos"
+  bin.install "bin/taosd"
+  bin.install "bin/taos.cfg"
+  bin.install "bin/libtaos.dylib"
   end
 
   test do
