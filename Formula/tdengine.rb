@@ -12,12 +12,8 @@ class Tdengine < Formula
   depends_on "make"
 
   def install
-  system "./configure"
-  system "mkdir debug"
-  system "cd debug"
-  system "cmake .."
-  system "cmake --build ."
-  system "make","install"
+
+  system "make"
   end
 
   test do
