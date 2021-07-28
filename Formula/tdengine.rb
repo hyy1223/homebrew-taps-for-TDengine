@@ -11,11 +11,10 @@ class Tdengine < Formula
   depends_on "cmake" => :build
 
   def install
+  system "cmake"
   system "make"
   bin.install "bin/taos"
   bin.install "bin/taosd"
-  bin.install "bin/taos.cfg"
-  bin.install "bin/libtaos.dylib"
   end
 
   test do
