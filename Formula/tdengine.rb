@@ -12,8 +12,12 @@ class Tdengine < Formula
   depends_on "make"
 
   def install
-  system "mkdir TDengine"
-  system "cd TDengine"
+  system "cd ~"
+  system "mkdir TDengine-ver-2.1.5.0"
+  system "cd TDengine-ver-2.1.5.0"
+  system "mkdir {1,2}"
+  system "cd ~"
+  system "mkdir finish"
   #system "tar -xvzf /Users/hhy/Library/Caches/Homebrew/downloads/7bdbd12d702c7cec7b3f1967387c60eed903839d3ec8f53a02c9efb3a62a9a50--TDengine-ver-2.1.5.0.tar.gz -C /Users/shared/"
 
   end
