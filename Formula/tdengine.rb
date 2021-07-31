@@ -12,14 +12,9 @@ class Tdengine < Formula
   depends_on "make"
 
   def install
-  system "sudo tar xvzf /Users/hhy/Library/Caches/Homebrew/downloads/7bdbd12d702c7cec7b3f1967387c60eed903839d3ec8f53a02c9efb3a62a9a50--TDengine-ver-2.1.5.0.tar.gz -C /Users/hhy/"
-  system "cd ~"
-  system "cd TDengine-ver-2.1.5.0"
-  system "mkdir debug "
-  system "cd debug"
-  system "cmake",".."
-  system "cmake","--build"
-  system "make","install"
+  system "CHMODE 777 /Users/hhy/Library/Caches/Homebrew/downloads/7bdbd12d702c7cec7b3f1967387c60eed903839d3ec8f53a02c9efb3a62a9a50--TDengine-ver-2.1.5.0.tar.gz"
+  system "tar -xvzf /Users/hhy/Library/Caches/Homebrew/downloads/7bdbd12d702c7cec7b3f1967387c60eed903839d3ec8f53a02c9efb3a62a9a50--TDengine-ver-2.1.5.0.tar.gz -C /Users/hhy/"
+
   end
 
   test do
