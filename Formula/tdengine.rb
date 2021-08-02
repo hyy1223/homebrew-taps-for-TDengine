@@ -13,7 +13,7 @@ class Tdengine < Formula
   def install
 mkdir "debug" do
    system "cmake",".."
-   system "cmake"."--build"
+   system "cmake","--build"
    system "make"
    system "make","install"
   #system "cd ~"
