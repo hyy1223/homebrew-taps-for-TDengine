@@ -11,13 +11,10 @@ class Tdengine < Formula
   depends_on "cmake" => :build
 
   def install
-mkdir "debug" do
-   system "cmake",".."
-   system "cmake","--build"
-   system "make"
-   system "make","install"
+#mkdir "debug" do
+ ####ystem "make","install"
 
-    end
+    #end
   end
 
   test do
