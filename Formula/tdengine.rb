@@ -9,10 +9,13 @@ class Tdengine < Formula
   license "AGPL-3.0"
 
   depends_on "cmake" => :build
-  depends_on "make"
 
   def install
-  system "cmake",".."
+mkdir "debug" do
+   system "cmake",".."
+   system "cmake"."--build"
+   system "make"
+   system "make","install"
   #system "cd ~"
   #system "mkdir TDengine-ver-2.1.5.0"
   #system "cd TDengine-ver-2.1.5.0"
