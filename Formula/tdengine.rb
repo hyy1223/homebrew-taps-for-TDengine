@@ -19,8 +19,10 @@ depends_on "cmake" => :build
                   "-Wno-dev",
                   "-DBUILD_TESTING=OFF",
                   "-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"]
-  mkdir -p "/usr/local/Cellar/tdengine/2.1.5.0/debug/" do
-    system "cmake", "..", *cmake_args
+
+    mkdir -p "debug" do
+       system "cmake", "..", *cmake_args
+       
     end
   end
 
