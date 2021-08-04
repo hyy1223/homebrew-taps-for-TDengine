@@ -11,11 +11,17 @@ class Tdengine < Formula
 depends_on "cmake" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    #system "./configure", *std_configure_args, "--disable-silent-rules"
-    system "cmake", "..", *std_cmake_args
+    cmake_args = ["-DCMAKE_INSTALL_PREFIX=/usr/local/Cellar/tdengine/2.1.5.0",
+                  "-DCMAKE_INSTALL_LIBDIR=lib",
+                  "-DCMAKE_BUILD_TYPE=Debug",
+                  "-DCMAKE_FIND_FRAMEWORK=LAST",
+                  "-DCMAKE_VERBOSE_MAKEFILE=ON",
+                  "-Wno-dev",
+                  "-DBUILD_TESTING=OFF",
+                  "-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"]
+  mkdir "debug" do
+    system "cmake", "..", *cmake_args
+    end
   end
 
   test do
