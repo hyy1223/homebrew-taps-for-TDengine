@@ -11,8 +11,7 @@ class Tdengine < Formula
   depends_on "cmake" => :build
 
   def install
-     
-     
+     bin.install "TDengine"
   end
 
   test do
