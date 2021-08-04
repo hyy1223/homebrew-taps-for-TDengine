@@ -8,14 +8,18 @@ class Tdengine < Formula
   sha256 "b5688928cde89c2a8bf315d11e1368843ea7d7d69c91ba1c95a5760e7b8bfb1d"
   license "AGPL-3.0"
 
-  depends_on "cmake" => :build
+depends_on "cmake" => :build
 
   def install
-     bin.install "TDengine"
+    # ENV.deparallelize  # if your formula fails when building in parallel
+    # Remove unrecognized options if warned by configure
+    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+    system "./configure", *std_configure_args, "--disable-silent-rules"
+    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
   test do
-    # `test do` will create, run in and delqwete a temporary directory.
+    # `test do` will create, run in and delete a temporary directory.
     #
     # This test will fail and we won't accept that! For Homebrew/homebrew-core
     # this will need to be a test that verifies the functionality of the
