@@ -20,7 +20,7 @@ depends_on "cmake" => :build
                   "-DBUILD_TESTING=OFF",
                   "-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"]
 
-    mkdir -p "debug" do
+    mkdir "debug" do
        system "cmake", "..", *cmake_args
        
     end
