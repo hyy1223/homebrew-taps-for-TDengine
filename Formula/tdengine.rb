@@ -11,7 +11,8 @@ class Tdengine < Formula
   depends_on "cmake" => :build
 
   def install
-     bin.install "TDengine-ver-2.1.5.0"
+     
+     
   end
 
   test do
