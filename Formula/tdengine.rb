@@ -11,19 +11,13 @@ class Tdengine < Formula
 depends_on "cmake" => :build
 
   def install
-    cmake_args = ["-DCMAKE_INSTALL_PREFIX=/usr/local/Cellar/tdengine/2.1.5.0",
-                  "-DCMAKE_INSTALL_LIBDIR=lib",
-                  "-DCMAKE_BUILD_TYPE=Debug",
-                  "-DCMAKE_FIND_FRAMEWORK=LAST",
-                  "-DCMAKE_VERBOSE_MAKEFILE=ON",
-                  "-Wno-dev",
-                  "-DBUILD_TESTING=OFF",
-                  "-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk"]
-
-    mkdir "debug" do
-       system "cmake", "..", *cmake_args
+      
+       system "cmake",".",*std_cmake_args
+       system "cmake","--build","."
+       system "make"
+       system "make","install"
        
-    end
+  
   end
 
   #test do
