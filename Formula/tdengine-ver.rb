@@ -4,18 +4,18 @@
 class TdengineVer < Formula
   desc "An open-source big data platform designed and optimized for the Internet of Things (IoT)."
   homepage "https://www.taosdata.com"
-  url "https://gitee.com/hyy1223/homebrew-taps-for-TDengine/raw/main/Download/TDengine-ver-2.1.5.0.tar.gz"
-  sha256 "c46d2334c1fba8efe263ab3a458a5a09cfd4ad241a31edbc1546d3460fdf2bef"
+  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/TDengine-ver-2.1.5.0.tar.gz"
+  sha256 "ce5b2dfb2de196add14262ac91d0d1bd4aa481f1fc25231156e930e5dee2975e"
   license "AGPL-3.0"
 
-  # depends_on "cmake" => :build
+   depends_on "cmake" => :build
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+
+    system "cmake", ".", *std_cmake_args
+    system "cmake","--build"
+    system "make"
+    system "make","install"
   end
 
   test do
