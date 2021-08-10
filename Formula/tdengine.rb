@@ -4,8 +4,8 @@
 class Tdengine < Formula
   desc ""
   homepage ""
-  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/TDengine03.tar.gz"
-  sha256 "55f682479c0a9880ed1a881c96c03703966a2880e1ab6b508d8f2f8e8c275279"
+  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/TDengine05.tar.gz"
+  sha256 "54daa584dfb89964eaa3badaf31411641dc74511955c57f7372cbe1919b11e69"
   license ""
 
   depends_on "cmake" => :build
