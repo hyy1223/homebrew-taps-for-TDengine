@@ -4,7 +4,7 @@
 class Tdengine < Formula
   desc ""
   homepage ""
-  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/tdengine.tar.gz"
+  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/tdengine03.tar.gz"
   sha256 "54daa584dfb89964eaa3badaf31411641dc74511955c57f7372cbe1919b11e69"
   license ""
 
