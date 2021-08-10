@@ -8,28 +8,29 @@ class TdengineVer < Formula
   sha256 "ce5b2dfb2de196add14262ac91d0d1bd4aa481f1fc25231156e930e5dee2975e"
   license "AGPL-3.0"
 
-   depends_on "cmake" => :build
 
-  def install
-    
-      mkdir "debug" do
-      system "cmake", "..", *std_cmake_args
-      system "cmake","--build","."
-      system "make"
-      system "make","install"
-      end
-  end
+  depends_on "cmake" => :build
 
-  test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! For Homebrew/homebrew-core
-    # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test TDengine-ver`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
-  end
+ def install
+   
+     mkdir "debug" do
+     system "cmake", "..", *std_cmake_args
+     system "cmake","--build","."
+     system "make"
+     system "make","install","--prefix=#{prefix}"
+     end
+ end
+
+ test do
+   # `test do` will create, run in and delete a temporary directory.
+   #
+   # This test will fail and we won't accept that! For Homebrew/homebrew-core
+   # this will need to be a test that verifies the functionality of the
+   # software. Run the test with `brew test TDengine-ver`. Options passed
+   # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
+   #
+   # The installed folder is not in the path, so use the entire path to any
+   # executables being tested: `system "#{bin}/program", "do", "something"`.
+   system "false"
+ end
 end
