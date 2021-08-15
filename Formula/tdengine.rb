@@ -4,9 +4,9 @@
 class Tdengine < Formula
   desc ""
   homepage ""
-  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/tdengine03.tar.gz"
-  sha256 "54daa584dfb89964eaa3badaf31411641dc74511955c57f7372cbe1919b11e69"
-  license ""
+  url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/TDengine-2.1.5.0.tar.gz"
+  sha256 "e58ce82f9678255b5cfbe50883943ff724ee6e300f7d113138cf4690b27ebbfb"
+  license "AGPL-3.0"
 
   depends_on "cmake" => :build
 
@@ -19,7 +19,6 @@ class Tdengine < Formula
      system "make","install"
      end
  end
-
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
