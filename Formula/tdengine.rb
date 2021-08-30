@@ -5,7 +5,7 @@ class Tdengine < Formula
   desc ""
   homepage ""
   url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/TDengine-2.1.5.0.tar.gz"
-  sha256 "eb077ee1cc7b0aca5b407e07faca2e612ac618a03b003adfe6caaa4037323bd9"
+  sha256 "76e42efd75f42ad17f845a81007d4d773ef05cebc1eafbcb58bdc9ffa90185ee"
   license "AGPL-3.0"
 
   depends_on "cmake" => :build
@@ -19,6 +19,31 @@ class Tdengine < Formula
      system "make","install"
      end
  end
+ 
+ plist_options :manual => "taosd start"
+ 
+ def plist; <<~EOS
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+   <dict>
+     <key>KeepAlive</key>
+     <true/>
+     <key>Label</key>
+     <string>#{plist_name}</string>
+     <key>ProgramArguments</key>
+     <array>
+       <string>/usr/local/cellar/tdengine/2.1.7.2/bin/taosd</string>
+     </array>
+     <key>RunAtLoad</key>
+     <true/>
+     <key>WorkingDirectory</key>
+     <string>#{datadir}</string>
+   </dict>
+   </plist>
+ EOS
+ end
+ 
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
