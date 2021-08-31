@@ -5,7 +5,7 @@ class Tdengine < Formula
   desc ""
   homepage ""
   url "https://raw.githubusercontent.com/hyy1223/homebrew-taps-for-TDengine/main/Download/TDengine-2.1.5.0.tar.gz"
-  sha256 "76e42efd75f42ad17f845a81007d4d773ef05cebc1eafbcb58bdc9ffa90185ee"
+  sha256 "0ec55a84a02eb797cf32995d8aba0fc0f6e5f08e340a5026a59f1ee3af5ff42d"
   license "AGPL-3.0"
 
   depends_on "cmake" => :build
@@ -33,12 +33,12 @@ class Tdengine < Formula
      <string>#{plist_name}</string>
      <key>ProgramArguments</key>
      <array>
-       <string>/usr/local/cellar/tdengine/2.1.7.2/bin/taosd</string>
+       <string>/usr/local/cellar/tdengine/2.1.5.0/bin/taosd</string>
      </array>
      <key>RunAtLoad</key>
      <true/>
      <key>WorkingDirectory</key>
-     <string>#{datadir}</string>
+     <string>/usr/local/cellar/tdengine/2.1.5.0/data</string>
    </dict>
    </plist>
  EOS
