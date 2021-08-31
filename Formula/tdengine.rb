@@ -40,5 +40,6 @@ class Tdengine < Formula
      <string>/usr/local/cellar/tdengine/$(verNumber)/data</string>
    </dict>
    </plist>
- EOS
+   EOS
+   end
  end
